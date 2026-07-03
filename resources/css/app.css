@@ -1,0 +1,108 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Montserrat', ui-sans-serif, system-ui;
+    --font-serif: 'Roboto Serif', serif;
+    --font-poppins: 'Poppins', sans-serif;
+
+    --color-dark: #052824;
+    --color-primary: #052824;
+    --color-secondary: #b0ec66;
+    --color-in-secondary: #006838;
+
+    --spacing-240: 15rem;
+}
+
+
+@layer components {
+    .section-title {
+        @apply font-bold text-xl md:text-3xl;
+    }
+
+    .nav{
+        @apply top-0 right-0 left-0 z-50 fixed bg-dark transition-colors duration-300 ease-in-out;
+    }
+
+    .nav.transparent {
+        @apply bg-transparent;
+    }
+
+    .nav .nav-container{
+        @apply flex justify-between items-center mx-auto px-2 md:px-0 py-4 container;
+    }
+
+    .nav.scrolled {
+        @apply bg-dark;
+    }
+
+    .nav.scrolled-bottom {
+        @apply bg-transparent;
+    }
+
+    .nav.scroller-top {
+        @apply bg-transparent;
+    }
+
+    .nav .nav-menu{
+        @apply relative flex items-center;
+    }
+
+    /* Nav Items */
+    .nav .nav-item {
+        @apply relative px-3 font-extrabold text-white uppercase;
+    }
+
+    .nav .nav-toggle {
+        @apply flex-col justify-center items-center gap-1.5 w-10 h-10 cursor-pointer;
+    }
+
+    .nav .nav-toggle span {
+        @apply block bg-white rounded-full w-7 h-0.5 transition-all duration-300 ease-in-out;
+    }
+
+    .specs-item{
+        @apply inline-block absolute bg-primary text-white border-secondary border-[1px] shadow-md backdrop-blur-sm px-4 py-2 rounded-3xl w-full max-w-3xs -translate-x-1/2 -translate-y-1/2;
+    }
+
+    /* faq */
+
+    .faq-item{
+        @apply relative py-4 border-dark border-t-2 transition-all duration-300 ease-in-out transform;
+    }
+
+    .faq-item .faq-title{
+        @apply font-semibold text-dark text-xl cursor-pointer max-w-11/12 md:max-w-10/12;
+    }
+    .faq-item .faq-content{
+        @apply mt-4 text-dark text-lg max-w-11/12;
+    }
+
+    .faq-item:last-child{
+        @apply border-b-2;
+    }
+
+    .faq-item .action{
+        @apply top-4 right-0 absolute text-dark cursor-pointer;
+    }
+
+    .faq-item .action .plus{
+        @apply block;
+    }
+
+    .faq-item .action .minus{
+        @apply block;
+    }
+
+    .faq-item.active .action .plus{
+        @apply hidden;
+    }
+
+    .faq-item:not(.active) .action .minus{
+        @apply hidden;
+    }
+}
