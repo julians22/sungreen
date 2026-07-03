@@ -17,6 +17,24 @@
             <form action="{{ route('contact.submit') }}" method="POST" class="bg-white shadow-lg drop-shadow-dark/50 p-4">
                 @csrf
 
+                {{-- Success Alert --}}
+                @if (session('success'))
+                    <div class="bg-green-100 mb-4 p-2 rounded text-green-800">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                {{-- Error Alert --}}
+                @if ($errors->any())
+                    <div class="bg-red-100 mb-4 p-2 rounded text-red-800">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <!-- Nama Lengkap -->
                 <div class="mb-4">
                     <label for="name" class="block mb-2 font-semibold text-dark">Nama</label>
