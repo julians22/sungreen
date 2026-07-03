@@ -8,7 +8,7 @@
 
     <div class="z-10 absolute inset-0 flex items-center mx-auto mt-20 container">
         <div class="mb-10 w-full max-w-[500px]">
-            <span class="block text-shadow-lg/20 font-poppins font-bold text-white md::text-[100px] text-2xl md:text-left text-center md:leading-[92px]">
+            <span class="block text-shadow-lg/20 font-poppins font-bold text-white md:text-[100px] text-2xl md:text-left text-center md:leading-[92px]">
                 TENTANG KAMI
             </span>
         </div>
