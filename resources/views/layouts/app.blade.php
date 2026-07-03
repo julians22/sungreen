@@ -14,6 +14,19 @@
 
     @stack('plugin-scripts')
 
+    {{-- Google Analytics --}}
+    @if (config('app.env') !== 'local')
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1JWBJBRXN"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Y1JWBJBRXN');
+        </script>
+    @endif
+
 </head>
 <body
     x-data="{ scrolledPage: false, open: false }"
