@@ -66,7 +66,7 @@
     }
 
     .specs-item{
-        @apply inline-block absolute bg-primary text-white border-secondary border-[1px] shadow-md backdrop-blur-sm px-4 py-2 rounded-3xl w-full max-w-3xs -translate-x-1/2 -translate-y-1/2;
+        @apply md:inline-block md:absolute bg-primary text-white border-secondary md:h-auto h-full border-[1px] shadow-md backdrop-blur-sm px-4 py-2 rounded md:rounded-3xl w-full max-w-3xs md:-translate-x-1/2 md:-translate-y-1/2;
     }
 
     /* faq */

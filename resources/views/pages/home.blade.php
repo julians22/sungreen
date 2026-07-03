@@ -19,10 +19,10 @@
     </div>
 </header>
 
-<section class="hidden md:block relative bg-dark">
+<section class="relative bg-dark">
 
-    <div class="-top-32 absolute inset-0 pointer-events-none">
-        <div class="flex justify-between mx-auto mb-12 w-full max-w-[960px]">
+    <div class="md:-top-32 md:absolute inset-0 py-10 md:py-0 pointer-events-none">
+        <div class="flex md:flex-row flex-col md:justify-between items-center gap-y-10 md:gap-y-0 mx-auto md:mb-12 px-2 md:px-0 w-full max-w-[960px]">
             <div x-data="{ shown: false }" x-intersect.full="shown = true" class="flex flex-col space-y-2 bg-secondary p-10 rounded-full size-64">
                 <img x-show="shown" x-transition src="{{ asset('img/icons/icon-1.png') }}" alt="" class="mx-auto aspect-square basis-1/4">
                 <h2 x-show="shown" x-transition class="font-bold text-primary text-base text-center">MENINGKATKAN KESUKSESAN PERTUMBUHAN TANAMAN</h2>
@@ -38,7 +38,7 @@
         </div>
     </div>
 
-    <div class="mx-auto pt-48 pb-12 w-full max-w-[960px]">
+    <div class="mx-auto px-2 md:px-0 pt-4 md:pt-48 pb-12 w-full max-w-[960px]">
 
         <h1 class="font-bold text-white text-4xl text-center">Kami Berdedikasi Untuk Membantu Kesuksesan Usaha Pertanian Anda</h1>
 
@@ -114,7 +114,7 @@
 </section>
 
 <!-- Product Features -->
-<section class="bg-white pt-8 pb-24">
+<section class="bg-white pt-8 pb-10 md:pb-24">
     <x-section-title
         border-class="bg-dark"
     >
@@ -122,9 +122,9 @@
     </x-section-title>
 
 
-    <div class="mx-auto mt-24 px-2 md:px-0 max-w-4xl container">
-        <div class="relative p-8">
-            <img src="{{ asset('img/specs.png') }}" class="w-full h-auto" alt="">
+    <div class="mx-auto mt-10 md:mt-24 px-2 md:px-0 max-w-4xl container">
+        <div class="relative p-2 md:p-8">
+            <img src="{{ asset('img/specs.png') }}" class="mx-auto w-full max-w-[600px] h-auto" alt="">
 
             {{-- Specs Key around the image --}}
             {{-- 8 keys orbiting in a wider circle --}}
@@ -202,6 +202,67 @@
                         </span>
                     </p>
                 </li>
+            </ul>
+
+            <ul class="md:hidden gap-4 grid grid-cols-2">
+                <li class="specs-item">
+                    <p class="font-bold text-xs">
+                        <b>UV PROTECTION:</b> <br>
+                        <span class="font-normal">UV400</span>
+                    </p>
+                </li>
+                <li class="specs-item">
+                    <p class="font-bold text-xs">
+                        <b>KETAHANAN:</b> <br>
+                        <span class="font-normal">Panas & Hujan Tropis</span>
+                    </p>
+                </li>
+                <li class="specs-item">
+                    <p class="font-bold text-xs">
+                        <b>TRANSMISI CAHAYA:</b> <br>
+                        <span class="font-normal">± 80–90 %</span>
+                    </p>
+                </li>
+                <li class="specs-item">
+                    <p class="font-bold text-xs">
+                        <b>UMUR PAKAI:</b> <br>
+                        <span class="font-normal">
+                            4–5 tahun <br>
+                            di bawah sinar matahari langsung
+                        </span>
+                    </p>
+                </li>
+                <li class="specs-item">
+                    <p class="font-bold text-xs">
+                        <b>GARANSI:</b> <br>
+                        <span class="font-normal">1 tahun</span>
+                    </p>
+                </li>
+                <li class="specs-item">
+                    <p class="font-bold text-xs">
+                        <b>KEMASAN ROLL:</b> <br>
+                        <span class="font-normal">
+                            Roll bergelondong,
+                            panjang variatif
+                        </span>
+                    </p>
+                </li>
+                <li class="specs-item">
+                    <p class="font-bold text-xs">
+                    <b>LEBAR MAX:</b> <br>
+                    <span class="font-normal">
+                        3 – 6 meter
+                    </span>
+                </li>
+                <li class="specs-item">
+                    <p class="font-bold text-xs">
+                        <b>KETEBALAN:</b> <br>
+                        <span class="font-normal">
+                            ± 180–250 µm
+                        </span>
+                    </p>
+                </li>
+
             </ul>
         </div>
     </div>
