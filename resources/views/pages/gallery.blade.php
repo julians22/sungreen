@@ -7,7 +7,7 @@
         x-data="{
             showLightbox: false,
             currentIndex: 0,
-            images: {{ $galleries->pluck('image_url')->toJson() }},
+            images: {{ $galleries->toJson() }},
             openLightbox(index) {
                 this.currentIndex = index;
                 this.showLightbox = true;
@@ -24,12 +24,12 @@
         @keydown.escape.window="showLightbox = false"
     >
         <div class="gap-4 md:gap-6 grid grid-cols-2 sm:grid-cols-3 bg-dark p-6">
-            <template x-for="(image, index) in images" :key="index">
+            <template x-for="(item, index) in images" :key="index">
                 <div class="aspect-video overflow-hidden">
-                    <img :src="image"
+                    <img :src="item.image_url"
                         @click="openLightbox(index)"
                         class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer"
-                        alt="Gallery Thumbnail">
+                        :alt="item.title">
                 </div>
             </template>
         </div>
@@ -60,14 +60,17 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
             </button>
 
-            <!-- Kontainer Utama Gambar -->
+           <!-- Kontainer Utama Gambar -->
             <div class="relative flex flex-col items-center w-full max-w-5xl max-h-[85vh]">
-                <img :src="images[currentIndex]"
+                <img :src="images[currentIndex].image_url"
                     class="shadow-2xl rounded w-full max-w-full max-h-[80vh] object-contain"
-                    alt="Enlarged view">
+                    :alt="images[currentIndex].title">
+
+                <!-- Title Gallery (Tepat di atas indikator angka) -->
+                <div class="mt-3 font-semibold text-lg text-white text-center" x-text="images[currentIndex].title"></div>
 
                 <!-- Indikator Angka (Contoh: 1 / 4) -->
-                <div class="bg-black/40 mt-3 px-3 py-1 rounded-full font-medium text-white/80 text-sm">
+                <div class="bg-black/40 mt-2 px-3 py-1 rounded-full font-medium text-white/80 text-sm">
                     <span x-text="currentIndex + 1"></span> / <span x-text="images.length"></span>
                 </div>
             </div>

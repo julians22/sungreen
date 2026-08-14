@@ -8,6 +8,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Schemas\Schema;
 
 class ProductForm
@@ -41,6 +42,9 @@ class ProductForm
                                 Textarea::make('additional_info.quality')
                                     ->label('Quality')
                                     ->columnSpanFull(),
+                            SpatieMediaLibraryFileUpload::make('thumbnail')
+	                            ->collection('thumbnail')
+	                            ->disk('public')
                             ])
                             ->columnSpan(3),
 

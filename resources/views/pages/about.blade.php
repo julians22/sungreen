@@ -20,9 +20,14 @@
 
     <div class="gap-10 grid grid-cols-1 md:grid-cols-2 mx-auto px-2 md:px-0 container">
         <div>
-            <h4 class="text-xl leading-loose">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias placeat, doloribus ad, modi dolorem cumque dolore nobis adipisci esse unde reprehenderit recusandae necessitatibus, eum animi possimus illum eaque explicabo sint illo. Eum, eveniet! Dignissimos obcaecati repellendus non repudiandae, asperiores a ipsam fuga voluptates reprehenderit odit quo voluptatum doloribus! Ea consequuntur cum dolores totam non, quidem eaque optio, illo rem maxime praesentium! Cum saepe distinctio eaque aspernatur quia vero perferendis. Id aliquam enim culpa voluptate quaerat consequatur. Illum ab sapiente labore, aliquam quia eos accusantium ut voluptates id. Incidunt ipsa, cumque illo ducimus cupiditate mollitia recusandae nisi aspernatur inventore pariatur excepturi!
-            </h4>
+            <h2 class="text-2xl font-bold">
+                Menjadikan SunGreen sebagai salah satu pilihan paling bermanfaat dan menguntungkan bagi petani dalam budidaya agrikultur
+            </h2>
+            <p class="text-xl leading-loose mt-4">
+                SunGreen hadir bukan sekadar sebagai produk, tapi juga sebagai mitra pertumbuhan bagi petani, peternak, pekebun, dan pembudidaya agrikultur Indonesia dengan menyediakan perlengkapan dan perlindungan yang kuat, tahan lama, dan modern untuk meningkatkan produktivitas, membuat pekerjaan lebih aman, dan mendorong efisiensi yang berkelanjutan.
+                <br>
+                Di tengah perubahan iklim, cuaca ekstrem, dan tuntutan hasil panen berkualitas tinggi, SunGreen berperan sebagai solusi perlindungan yang cerdas, membantu meningkatkan produktivitas, efisiensi, dan keberlanjutan sektor agrikultur lokal.
+            </p>
         </div>
 
         <div>
@@ -48,9 +53,9 @@
             <div class="bg-dark rounded-2xl w-20 h-20 overflow-hidden"></div>
 
             <div>
-                <p class="font-semibold">lorem ipsum</p>
+                <p class="font-semibold">Petani Mitra</p>
                 <!-- Counter -->
-                <h3 class="font-bold text-dark text-2xl">+100</h3>
+                <h3 class="font-bold text-dark text-2xl">+100 Petani Binaan</h3>
             </div>
         </div>
 
@@ -59,9 +64,9 @@
             <div class="bg-dark rounded-2xl w-20 h-20 overflow-hidden"></div>
 
             <div>
-                <p class="font-semibold">lorem ipsum</p>
+                <p class="font-semibold">Luas Lahan</p>
                 <!-- Counter -->
-                <h3 class="font-bold text-dark text-2xl">+100</h3>
+                <h3 class="font-bold text-dark text-2xl">+50 Hektar Greenhouse</h3>
             </div>
         </div>
 
@@ -70,9 +75,9 @@
             <div class="bg-dark rounded-2xl w-20 h-20 overflow-hidden"></div>
 
             <div>
-                <p class="font-semibold">lorem ipsum</p>
+                <p class="font-semibold">Mitra Bisnis</p>
                 <!-- Counter -->
-                <h3 class="font-bold text-dark text-2xl">+100</h3>
+                <h3 class="font-bold text-dark text-2xl">+100 Klien & Distributor</h3>
             </div>
         </div>
 
@@ -81,9 +86,9 @@
             <div class="bg-dark rounded-2xl w-20 h-20 overflow-hidden"></div>
 
             <div>
-                <p class="font-semibold">lorem ipsum</p>
+                <p class="font-semibold">100% Bebas Pestisida Berbahaya</p>
                 <!-- Counter -->
-                <h3 class="font-bold text-dark text-2xl">+100</h3>
+                <h3 class="font-bold text-dark text-2xl">100% Bebas Pestisida Berbahaya</h3>
             </div>
         </div>
 
@@ -98,7 +103,7 @@
     <!-- Description -->
     <div class="mx-auto mt-10 max-w-5xl container">
         <p class="text-dark text-lg text-center leading-loose">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, at! Sint animi esse ut earum reiciendis perferendis incidunt ducimus cum modi architecto repudiandae minus corrupti eaque enim at sit velit delectus quasi nemo reprehenderit consequatur, saepe qui. Officia, quam minima.
+            Di tengah perubahan iklim, cuaca ekstrem, dan tuntutan hasil panen berkualitas tinggi, SunGreen berperan sebagai solusi perlindungan yang cerdas, membantu meningkatkan produktivitas, efisiensi, dan keberlanjutan sektor agrikultur lokal.
         </p>
     </div>
 
