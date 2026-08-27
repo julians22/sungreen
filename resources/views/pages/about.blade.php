@@ -46,7 +46,7 @@
         <h2 class="text-dark section-title">Misi dan Nilai Kami</h2>
     </x-section-title>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 mx-auto mt-10 divide-x divide-dark container">
+    {{-- <div class="grid grid-cols-2 md:grid-cols-4 mx-auto mt-10 divide-x divide-dark container">
 
         <div class="flex md:flex-row flex-col justify-center items-center gap-x-3 gap-y-5 px-4">
             <!-- Image -->
@@ -98,7 +98,7 @@
 
 
 
-    </div>
+    </div> --}}
 
     <!-- Description -->
     <div class="mx-auto mt-10 max-w-5xl container">

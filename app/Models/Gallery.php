@@ -21,5 +21,6 @@ class Gallery extends Model implements HasMedia
     {
         $this->addMediaCollection('images');
         $this->addMediaCollection('thumbnail');
+        $this->addMediaCollection('videos');
     }
 }

@@ -42,8 +42,10 @@ class ProductForm
                                 Textarea::make('additional_info.quality')
                                     ->label('Quality')
                                     ->columnSpanFull(),
-                            SpatieMediaLibraryFileUpload::make('thumbnail')
+                            SpatieMediaLibraryFileUpload::make('thumbnail_products')
                             ->collection('thumbnail')
+                            ->appendFiles()
+                            ->multiple()
                             ->disk('public')
                             ])
                             ->columnSpan(3),

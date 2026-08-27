@@ -23,11 +23,13 @@ class GalleryForm
                             ->collection('images')
                             ->disk('public')
                             ->multiple()
-                            ->image()
-                            ->columnSpan(3)
+                            ->image(),
+                    SpatieMediaLibraryFileUpload::make('videos')
+                            ->collection('videos')
+                            ->disk('public')
                         
                             
-                            ,
+                           
                     
             ]);
     }

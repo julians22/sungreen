@@ -37,5 +37,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\Product::factory(10)->uncategorized()->create();
 
         \App\Models\Gallery::factory(10)->create();
+
+        \App\Models\Faq::factory(10)->create();
+
+        \App\Models\Review::factory(10)->create();
     }
 }

@@ -30,7 +30,9 @@ class PageController extends Controller
 
     public function productDetail($slug)
     {
-        $product = \App\Models\Product::where('slug', $slug)->with('category', 'relatedProducts')->firstOrFail();
+        $product = \App\Models\Product::where('slug', $slug)
+        ->with('category', 'relatedProducts', 'media')
+        ->firstOrFail();
         return view('pages.product-detail', compact('product'));
     }
 
@@ -43,7 +45,18 @@ class PageController extends Controller
         $galleryCollections = $queryGallery->map(function ($gallery) {
             $images = $gallery->getMedia('images')->map(function ($media) use ($gallery) {
                 return [
+                    'type' => 'image',
                     'image_url' => $media->getUrl(),
+                    'title' => $gallery->title,
+                    'description' => $gallery->description,
+
+                ];
+            });
+
+            $videos = $gallery->getMedia('videos')->map(function ($media) use ($gallery) {
+                return [
+                    'type' => 'video',
+                    'video_url' => $media->getUrl(),
                     'title' => $gallery->title,
                     'description' => $gallery->description,
 
@@ -55,8 +68,7 @@ class PageController extends Controller
                 'title' => $gallery->title,
                 'slug' => $gallery->slug,
                 'description' => $gallery->description,
-                'images' => $images,
-               
+                'items' => $videos->concat($images),
             ];
         });
 
@@ -65,11 +77,11 @@ class PageController extends Controller
 
 
         // Collect all images from all galleries into a single array
-        $galleries = $galleryCollections->flatMap(function ($gallery) {
-            return $gallery['images'];
+        $items = $galleryCollections->flatMap(function ($gallery) {
+            return $gallery['items'];
         });
 
-        return view('pages.gallery', compact('galleries'));
+        return view('pages.gallery', compact('items'));
     }
 
     public function contact()

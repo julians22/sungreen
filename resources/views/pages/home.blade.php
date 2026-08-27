@@ -392,9 +392,9 @@
     <div x-data="{ activeIndex: 0}" class="mx-auto px-2 md:px-0 container">
         <div class="mt-10">
             @foreach ($faqs as $faq)
-            <div class="faq-item" :class="{ 'active': activeIndex === {{ $loop->index }} }">
+            <div class="faq-item" :class="{ 'active': activeIndex === {{ $loop->index }} }" >
                 <h3 class="faq-title" @click="activeIndex = activeIndex === {{ $loop->index }} ? null : {{ $loop->index }}">{{ $faq->question }}</h3>
-                <div class="faq-content" x-show="activeIndex === {{ $loop->index }}" x-transition.opacity.duration.300ms>
+                <div class="faq-content translate-y-4" x-show="activeIndex === {{ $loop->index }}" x-collapse>
                     {!! $faq->answer !!}
                 </div>
 

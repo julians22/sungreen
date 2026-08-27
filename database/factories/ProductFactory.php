@@ -49,7 +49,7 @@ class ProductFactory extends Factory
             'slug' => $slug,
             'description' => $this->faker->paragraph(),
             'additional_info' => [
-                'quantity' => $this->faker->paragraph(),
+                'quality' => $this->faker->paragraph(),
                 'features' => $this->faker->paragraph(),
             ]
         ];

@@ -79,7 +79,7 @@
         @apply font-semibold text-dark text-xl cursor-pointer max-w-11/12 md:max-w-10/12;
     }
     .faq-item .faq-content{
-        @apply mt-4 text-dark text-lg max-w-11/12;
+        @apply text-dark text-lg max-w-11/12;
     }
 
     .faq-item:last-child{

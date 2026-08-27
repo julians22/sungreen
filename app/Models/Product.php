@@ -46,8 +46,7 @@ class Product extends Model implements HasMedia
     // Image Collections
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('thumbnail')
-            ->singleFile();
+        $this->addMediaCollection('thumbnail');
 
         $this->addMediaCollection('gallery');
     }
