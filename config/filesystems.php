@@ -46,7 +46,6 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            // 'url' => rtrim(env('APP_URL', 'http://sungreen-main.test/'), '/').'/storage',
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
