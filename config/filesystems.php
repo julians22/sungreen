@@ -36,11 +36,7 @@ return [
             'serve' => true,
             'throw' => false,
             'report' => false,
-             'tmp-for-tests' => [
-        'driver' => 'local',
-        'root' => storage_path('framework/testing/disks/tmp-for-tests'),
-        'throw' => false,
-    ],
+             
         ],
 
         'public' => [
@@ -65,6 +61,12 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        
+        'tmp-for-tests' => [
+        'driver' => 'local',
+        'root' => storage_path('framework/testing/disks/tmp-for-tests'),
+        'throw' => false,
+    ],
 
     ],
 
