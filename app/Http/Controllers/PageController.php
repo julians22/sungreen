@@ -96,9 +96,11 @@ class PageController extends Controller
             'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:255',
             'message' => 'required|string',
+            'g-recaptcha-response' => 'required|recaptchav3:contact,0.5',
         ]);
 
         Contact::create($validatedData);
+        dd(request()->all());
 
         return redirect()->route('contact')->with('success', 'Pesan Anda telah dikirim. Terima kasih!');
     }

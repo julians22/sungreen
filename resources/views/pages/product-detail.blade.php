@@ -16,7 +16,7 @@
                 @foreach ($product->getMedia('thumbnail') as $media)
                     <li class="splide__slide">
                         <div class="aspect-square">
-                            <img src="{{ $media->getUrl('thumb') }}" alt="{{ $product->name }}" class="shadow-lg rounded-lg w-full h-full object-cover">
+                            <img src="{{ $media->getUrl('medium') }}" alt="{{ $product->name }}" class="shadow-lg rounded-lg w-full h-full object-cover">
                         </div>
                     </li>
                 @endforeach
@@ -25,12 +25,12 @@
     </section>
 <!-- Thumbnail Slider (Pagination) -->
 <section id="thumbnail-slider" class="splide">
-    <div class="splide__track !h-[90px]">
-        <ul class="splide__list !h-[90px] items-center">
+    <div class="splide__track !h-[400px] md:!h-[90px]">
+        <ul class="splide__list !h-[400px] md:!h-[90px] items-center">
             @foreach ($product->getMedia('thumbnail') as $media)
-                <li class="splide__slide !w-[80px] !h-[80px] cursor-pointer opacity-60 hover:opacity-100 transition duration-200 [&.is-active]:opacity-100 [&.is-active]:ring-2 [&.is-active]:ring-primary flex-shrink-0">
-                    <div class="w-full h-full rounded-lg overflow-hidden">
-                        <img src="{{ $media->getUrl('thumb') }}" alt="{{ $product->name }}" class="w-full h-full object-cover">
+                <li class="splide__slide !w-[80px] !h-[80px] cursor-pointer hidden md:block opacity-60 hover:opacity-100 transition duration-200 [&.is-active]:opacity-100 [&.is-active]:ring-2 [&.is-active]:ring-primary flex-shrink-0">
+                    <div class="w-full h-full rounded-lg overflow-hidden ">
+                        <img src="{{ $media->getUrl('medium') }}" alt="{{ $product->name }}" class="w-full h-full object-cover">
                     </div>
                 </li>
             @endforeach
@@ -47,17 +47,18 @@
 
                     <div class="py-6">
                         <h2 class="font-semibold text-dark text-2xl">Deskripsi Produk</h2>
-                        <p class="mt-2 text-dark/80">{{ $product->description }}</p>
+                        <div class="mt-2 text-dark/80">{!! $product->description !!}</div>
                     </div>
 
-                    <div class="py-6">
+                    {{-- belum tau kepake apa ngga --}}
+                    <div class="py-6 hidden">
                         <h2 class="font-semibold text-dark text-2xl">Kualitas Produk</h2>
-                        <p class="mt-2 text-dark/80">{{ $product->additional_info['quality'] ?? 'N/A' }}</p>
+                        <div class="mt-2 text-dark/80">{!! $product->additional_info['quality'] ?? 'N/A' !!}</div>
                     </div>
 
                     <div class="py-6">
                         <h2 class="font-semibold text-dark text-2xl">Fitur Produk</h2>
-                        <p class="mt-2 text-dark/80">{{ $product->additional_info['features'] ?? 'N/A' }}</p>
+                        <div class="mt-2 text-dark/80">{!! $product->additional_info['features'] ?? 'N/A' !!}</div>
                     </div>
 
                     <div class="py-6">

@@ -20,10 +20,10 @@
 
     <div class="gap-10 grid grid-cols-1 md:grid-cols-2 mx-auto px-2 md:px-0 container">
         <div>
-            <h2 class="text-2xl font-bold">
-                Menjadikan SunGreen sebagai salah satu pilihan paling bermanfaat dan menguntungkan bagi petani dalam budidaya agrikultur
+            <h2 class="text-3xl text-justify font-bold 2xl:tracking-tight">
+                Menjadikan SunGreen Pilihan Bermanfaat dan Menguntungkan bagi Petani dan Pekebun
             </h2>
-            <p class="text-xl leading-loose mt-4">
+            <p class="text-lg text-justify 2xl:text-xl leading-loose mt-4">
                 SunGreen hadir bukan sekadar sebagai produk, tapi juga sebagai mitra pertumbuhan bagi petani, peternak, pekebun, dan pembudidaya agrikultur Indonesia dengan menyediakan perlengkapan dan perlindungan yang kuat, tahan lama, dan modern untuk meningkatkan produktivitas, membuat pekerjaan lebih aman, dan mendorong efisiensi yang berkelanjutan.
                 <br>
                 Di tengah perubahan iklim, cuaca ekstrem, dan tuntutan hasil panen berkualitas tinggi, SunGreen berperan sebagai solusi perlindungan yang cerdas, membantu meningkatkan produktivitas, efisiensi, dan keberlanjutan sektor agrikultur lokal.
@@ -31,14 +31,14 @@
         </div>
 
         <div>
-            <img src="{{ asset('img/about-100.jpg') }}" alt="" class="rounded-xl w-full h-auto">
+            <img src="{{ asset('img/about-real.jpg') }}" alt="" class="rounded-xl w-full h-auto">
         </div>
 
     </div>
 
 </section>
 
-<section class="bg-gray-100 py-20">
+<section class="bg-gray-100 py-8">
 
     <x-section-title
         border-class="bg-dark"
@@ -102,7 +102,7 @@
 
     <!-- Description -->
     <div class="mx-auto mt-10 max-w-5xl container">
-        <p class="text-dark text-lg text-center leading-loose">
+        <p class="text-dark text-[16.5px] text-center leading-loose">
             Di tengah perubahan iklim, cuaca ekstrem, dan tuntutan hasil panen berkualitas tinggi, SunGreen berperan sebagai solusi perlindungan yang cerdas, membantu meningkatkan produktivitas, efisiensi, dan keberlanjutan sektor agrikultur lokal.
         </p>
     </div>

@@ -15,6 +15,8 @@
     --color-secondary: #b0ec66;
     --color-in-secondary: #006838;
 
+
+    --breakpoint-3xl: 1919px;
     --spacing-240: 15rem;
 }
 
@@ -105,4 +107,11 @@
     .faq-item:not(.active) .action .minus{
         @apply hidden;
     }
+
+    /* Button green in home */
+
+    .btn-green {
+        @apply inline-block py-4 px-6 text-lg bg-in-secondary border border-primary text-white rounded-full transition hover:bg-white hover:text-primary duration-500;
+    }
+
 }

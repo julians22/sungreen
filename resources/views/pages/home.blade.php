@@ -62,7 +62,7 @@
         <div class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10">
             @foreach ($products as $product)
                 <div class="flex flex-col bg-white shadow-lg rounded-lg aspect-square overflow-hidden">
-                    <img src="{{ $product->getFirstMediaUrl('thumbnail', 'thumb') }}" alt="{{ $product->name }}" class="w-full h-48 object-cover">
+                    <img src="{{ $product->getFirstMediaUrl('thumbnail', 'medium') }}" alt="{{ $product->name }}" class="w-full h-75 md:h-48 object-cover">
                     <div class="flex flex-col flex-1 justify-between p-4">
                         <h3 class="mb-2 font-bold text-dark text-lg">{{ $product->name }}</h3>
                         <p class="mb-4 text-dark text-sm">{{ Str::limit($product->description, 100) }}</p>
@@ -80,7 +80,7 @@
 </section>
 
 <!-- Featured Product -->
-<section class="bg-white py-8">
+<section class="bg-white pb-8 pt-4">
     <x-section-title
         border-class="bg-dark"
     >
@@ -89,32 +89,37 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 mt-10 md:h-screen overflow-hidden">
         <div>
-            <img src="{{ asset('img/featured_products-100.jpg') }}" alt="Featured Product" class="shadow-lg rounded-lg w-full h-auto">
+            <img src="{{ asset('img/featrued-prod-alternate-2.png') }}" alt="Featured Product" class=" w-full h-full">
         </div>
 
-        <div class="space-y-6 bg-secondary p-6">
+        <div class="space-y-6 bg-secondary p-6 3xl:pt-24 md:pl-20">
             <img src="{{ asset('img/logo-black.png') }}" alt="" class="mb-4 h-12">
             <h3 class="font-bold text-in-secondary text-6xl">Plastic UV <br> <span class="text-base">200 Micron</span></h3>
-            <div class="space-y-6 max-w-4/6 text-dark text-lg">
+            <div class="space-y-6 max-w-5/6 text-dark text-lg 2xl:text-lg leading-relaxed tracking-normal">
 
                 <p>Sungreen Plastic UV terbuat dari material tahan lama dengan perlindungan UV, mampu menstabilkan suhu, mengurangi panas berlebih, dan menjaga kelembapan sehingga mendukung pertumbuhan tanaman sepanjang musim.</p>
                 <P><strong>Sungreen Plastic UV adalah plastik greenhouse berkualitas tinggi yang dirancang untuk:</strong></P>
-                <ul class="list-disc list-inside">
+                <ul class="list-disc list-inside text-lg text-black">
                     <li>Melindungi tanaman dari radiasi UV berlebih</li>
                     <li>Menstabilkan suhu dan kelembapan dalam greenhouse</li>
                     <li>Menjaga penerimaan cahaya yang optimal agar tanaman tumbuh sehat</li>
                 </ul>
 
-                <p class="mt-2 text-in-secondary">
+                <p class="mt-2 text-black">
                     Dengan perlindungan dan fitur dirancang khusus, Sungreen Plastic UV membantu menciptakan lingkungan tumbuh yang ideal dan produktif bagi berbagai jenis tanaman.
                 </p>
+
+                <a href="https://wa.me/085776582728" class="btn-green 3xl:mt-8 inline-flex items-center gap-2">
+    Hubungi Kami
+    @svg('bi-whatsapp', 'w-6 h-6')
+</a>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Product Features -->
-<section class="bg-white pt-8 pb-10 md:pb-24">
+<section class="bg-white pb-10 md:pb-24">
     <x-section-title
         border-class="bg-dark"
     >
@@ -128,25 +133,26 @@
 
             {{-- Specs Key around the image --}}
             {{-- 8 keys orbiting in a wider circle --}}
+            {{-- ver desktop --}}
             <ul class="hidden md:block absolute inset-0">
                 {{-- 1. Top Center --}}
-                <li class="top-[5%] left-[50%] specs-item">
+                <li class="top-[0%] left-[50%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>UV PROTECTION:</b> <br>
-                        <span class="font-normal">UV400</span>
+                        <b>UKURAN:</b> <br>
+                        <span class="font-normal">Panjang 50 Meter & Lebar Variatif</span>
                     </p>
                 </li>
 
                 {{-- 2. Top Right --}}
-                <li class="top-[18%] left-[82%] specs-item">
+                <li class="top-[18%] left-[100%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>KETAHANAN:</b> <br>
-                        <span class="font-normal">Panas & Hujan Tropis</span>
+                        <b>DAYA TAHAN:</b> <br>
+                        <span class="font-normal">Tahan 5 Tahun Penggunaan</span>
                     </p>
                 </li>
 
                 {{-- 3. Middle Right --}}
-                <li class="top-[50%] left-[95%] specs-item">
+                <li class="top-[50%] left-[95%] specs-item hidden">
                     <p class="font-bold text-xs">
                         <b>TRANSMISI CAHAYA:</b> <br>
                         <span class="font-normal">± 80–90 %</span>
@@ -154,37 +160,35 @@
                 </li>
 
                 {{-- 4. Bottom Right --}}
-                <li class="top-[82%] left-[82%] specs-item">
+                <li class="top-[82%] left-[100%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>UMUR PAKAI:</b> <br>
+                        <b>KETERSEDIAAN:</b> <br>
                         <span class="font-normal">
-                            4–5 tahun <br>
-                            di bawah sinar matahari langsung
+                            Tersedia di toko pertanian dan perkebunan terdekat
                         </span>
                     </p>
                 </li>
 
                 {{-- 5. Bottom Center --}}
-                <li class="top-[95%] left-[50%] specs-item">
+                <li class="top-[100%] left-[50%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>STABILITAS:</b> <br>
-                        <span class="font-normal">Anti-Fading + Anti-Crack</span>
+                        <b>PEMASANGAN:</b> <br>
+                        <span class="font-normal">Sangat Elastis Tanpa Perlu Dijemur Terlebih Dahulu</span>
                     </p>
                 </li>
 
                 {{-- 6. Bottom Left --}}
-                <li class="top-[82%] left-[18%] specs-item">
+                <li class="top-[82%] left-[6%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>KEMASAN ROLL:</b> <br>
+                        <b>HARGA:</b> <br>
                         <span class="font-normal">
-                            Roll bergelondong,
-                            panjang variatif
+                            Bersahabat untuk Kualitas Terbaik
                         </span>
                     </p>
                 </li>
 
                 {{-- 7. Middle Left --}}
-                <li class="top-[50%] left-[5%] specs-item">
+                <li class="top-[50%] left-[5%] specs-item hidden">
                     <p class="font-bold text-xs">
                         <b>LEBAR MAX:</b> <br>
                         <span class="font-normal">
@@ -194,71 +198,71 @@
                 </li>
 
                 {{-- 8. Top Left --}}
-                <li class="top-[18%] left-[18%] specs-item">
+                <li class="top-[18%] left-[6%] specs-item">
                     <p class="font-bold text-xs">
                         <b>KETEBALAN:</b> <br>
                         <span class="font-normal">
-                            ± 180–250 µm
+                            200 Mikron
                         </span>
                     </p>
                 </li>
             </ul>
 
+            {{-- ver mobile --}}
             <ul class="md:hidden gap-4 grid grid-cols-2">
                 <li class="specs-item">
                     <p class="font-bold text-xs">
-                        <b>UV PROTECTION:</b> <br>
-                        <span class="font-normal">UV400</span>
+                        <b>KETEBALAN:</b> <br>
+                        <span class="font-normal">200 Mikron</span>
                     </p>
                 </li>
                 <li class="specs-item">
                     <p class="font-bold text-xs">
-                        <b>KETAHANAN:</b> <br>
-                        <span class="font-normal">Panas & Hujan Tropis</span>
+                        <b>DAYA TAHAN:</b> <br>
+                        <span class="font-normal">Tahan 5 Tahun Penggunaan</span>
                     </p>
                 </li>
                 <li class="specs-item">
                     <p class="font-bold text-xs">
-                        <b>TRANSMISI CAHAYA:</b> <br>
-                        <span class="font-normal">± 80–90 %</span>
+                        <b>PEMASANGAN:</b> <br>
+                        <span class="font-normal">Sangat Elastis Tanpa Perlu Dijemur Terlebih Dahulu</span>
                     </p>
                 </li>
                 <li class="specs-item">
                     <p class="font-bold text-xs">
-                        <b>UMUR PAKAI:</b> <br>
+                        <b>HARGA:</b> <br>
                         <span class="font-normal">
-                            4–5 tahun <br>
-                            di bawah sinar matahari langsung
+                            Bersahabat untuk Kualitas Terbaik
                         </span>
                     </p>
                 </li>
                 <li class="specs-item">
                     <p class="font-bold text-xs">
-                        <b>GARANSI:</b> <br>
-                        <span class="font-normal">1 tahun</span>
+                        <b>KETERSEDIAAN:</b> <br>
+                        <span class="font-normal">Tersedia di toko pertanian dan perkebunan terdekat</span>
                     </p>
                 </li>
                 <li class="specs-item">
                     <p class="font-bold text-xs">
-                        <b>KEMASAN ROLL:</b> <br>
+                        <b>UKURAN:</b> <br>
                         <span class="font-normal">
-                            Roll bergelondong,
-                            panjang variatif
+                            Panjang 50 Meter & Lebar Variatif
                         </span>
                     </p>
                 </li>
-                <li class="specs-item">
+                {{-- hide sementara --}}
+                <li class="specs-item hidden">
                     <p class="font-bold text-xs">
                     <b>LEBAR MAX:</b> <br>
                     <span class="font-normal">
                         3 – 6 meter
                     </span>
                 </li>
-                <li class="specs-item">
+                <li class="specs-item hidden">
                     <p class="font-bold text-xs">
                         <b>KETEBALAN:</b> <br>
                         <span class="font-normal">
-                            ± 180–250 µm
+                            200 Mikron
                         </span>
                     </p>
                 </li>
@@ -302,7 +306,7 @@
 
                 <div class="max-w-4/5">
                     <p class="font-bold text-white text-center">
-                        Mempertahankan kondisi tumbuh ideal — suhu, kelembapan, dan cahaya
+                        Mempertahankan kondisi tumbuh ideal suhu, kelembapan, dan cahaya
                     </p>
                 </div>
 
@@ -367,7 +371,7 @@
                                             @endfor
 
                                         </div>
-                                        <p class="text-dark text-xs md:text-lg text-center italic">"{{ $review->comment }}"</p>
+                                        <p class="text-dark text-xs max-w-4/5 md:text-lg text-center italic">"{{ $review->comment }}"</p>
                                         <p class="font-bold text-base md:text-2xl"><span class="text-primary">-{{ $review->name }},</span> {{ $review->after_name }}</p>
                                     </div>
                                 </div>
@@ -382,7 +386,8 @@
 </section>
 
 <!-- FAQ -->
-<section class="bg-white pt-8 pb-14">
+{{-- Sementara di hide dulu --}}
+<section class="bg-white pt-8 pb-14 hidden">
     <x-section-title
         border-class="bg-dark"
     >
@@ -394,7 +399,7 @@
             @foreach ($faqs as $faq)
             <div class="faq-item" :class="{ 'active': activeIndex === {{ $loop->index }} }" >
                 <h3 class="faq-title" @click="activeIndex = activeIndex === {{ $loop->index }} ? null : {{ $loop->index }}">{{ $faq->question }}</h3>
-                <div class="faq-content translate-y-4" x-show="activeIndex === {{ $loop->index }}" x-collapse>
+                <div class="faq-content translate-y-4" x-show="activeIndex === {{ $loop->index }}" x-collapse.duration.500ms>
                     {!! $faq->answer !!}
                 </div>
 
@@ -414,13 +419,13 @@
 
 <!-- Siap Membantu Kesuksesan Usaha Pertanian Anda -->
 <section
-    style="--tw-bg-image: url({{ asset('img/contact-background.png') }});"
-    class="bg-(image:--tw-bg-image) bg-cover bg-bottom pt-12 pb-12 aspect-square md:aspect-auto min-h-auto md:min-h-screen">
+    style=" --tw-bg-image: url({{ asset('img/background-contact-crop.png') }});"
+    class="bg-(image:--tw-bg-image) bg-cover bg-top pt-2 md:pt-8 aspect-square md:aspect-auto min-h-auto md:min-h-screen ">
 
     <x-section-title
-        border-class="bg-primary"
+        border-class="bg-white"
     >
-        <h2 class="text-primary text-center section-title">Siap Membantu Kesuksesan Usaha Pertanian Anda</h2>
+        <h2 class="text-white text-center md:text-4xl section-title">Siap Membantu Kesuksesan Usaha Pertanian Anda</h2>
     </x-section-title>
 
 </section>

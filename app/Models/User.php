@@ -14,7 +14,7 @@ use Illuminate\Notifications\Notifiable;
 
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
-class User extends Authenticatable implements FilamentUser 
+class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
@@ -26,8 +26,10 @@ class User extends Authenticatable implements FilamentUser
      */
      public function canAccessPanel(Panel $panel): bool
     {   
-        return str_ends_with($this->email, '@democube.id');
+        // return str_ends_with($this->email, '@democube.id');
+        return true;
     }
+
     protected function casts(): array
     {
         return [

@@ -59,6 +59,8 @@
                     <textarea name="message" id="message" rows="5" class="px-3 py-2 border border-gray-300 focus:border-primary/40 rounded focus:outline-none focus:ring w-full" required></textarea>
                 </div>
 
+                {!! RecaptchaV3::field('contact') !!}
+
                 <button type="submit" class="bg-dark hover:bg-dark/80 px-6 py-2 rounded font-semibold text-white transition duration-300">Kirim Pesan</button>
             </form>
         </div>

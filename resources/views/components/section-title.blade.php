@@ -3,7 +3,7 @@
 ])
 
 <div
-    class="relative flex flex-col justify-center items-center gap-y-3 mx-auto w-full lg:w-max text-center"
+    class="relative flex flex-col justify-center items-center gap-y-3 mx-auto w-full lg:w-max text-center md:mt-10"
 >
     {{ $slot }}
 

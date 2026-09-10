@@ -3,9 +3,9 @@
 namespace App\Filament\Resources\Products\Schemas;
 
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -31,15 +31,48 @@ class ProductForm
                                     ->required(),
                                 TextInput::make('slug')
                                     ->required(),
-                                Textarea::make('description')
+                                RichEditor::make('description')
+                                    ->toolbarButtons([
+                                        'bold',
+                                        'italic',
+                                        'underline',
+                                        'strike',
+                                        'link',
+                                        'codeBlock',
+                                        'bulletList',
+                                        'orderedList',
+                                        'blockquote',
+                                    ])
                                     ->required(),
 
                                 // Features
-                                Textarea::make('additional_info.features')
+                                RichEditor::make('additional_info.features')
                                     ->label('Features')
+                                    ->toolbarButtons([
+                                        'bold',
+                                        'italic',
+                                        'underline',
+                                        'strike',
+                                        'link',
+                                        'codeBlock',
+                                        'bulletList',
+                                        'orderedList',
+                                        'blockquote',
+                                    ])
                                     ->columnSpanFull(),
                                 // Quality
-                                Textarea::make('additional_info.quality')
+                                RichEditor::make('additional_info.quality')
+                                    ->toolbarButtons([
+                                        'bold',
+                                        'italic',
+                                        'underline',
+                                        'strike',
+                                        'link',
+                                        'codeBlock',
+                                        'bulletList',
+                                        'orderedList',
+                                        'blockquote',
+                                    ])
                                     ->label('Quality')
                                     ->columnSpanFull(),
                             SpatieMediaLibraryFileUpload::make('thumbnail_products')

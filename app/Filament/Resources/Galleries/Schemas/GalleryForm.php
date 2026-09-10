@@ -26,6 +26,7 @@ class GalleryForm
                             ->image(),
                     SpatieMediaLibraryFileUpload::make('videos')
                             ->collection('videos')
+                            ->multiple()
                             ->disk('public')
                         
                             

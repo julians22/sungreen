@@ -9,7 +9,7 @@
         <h2 class="text-dark section-title">Produk Kami</h2>
     </x-section-title>
 
-    <div class="gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto mt-10 px-2 md:px-0 container container">
+    <div class="gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto mt-10 px-2 md:px-0 container container">
         @foreach ($products as $product)
         <x-product-card :product="$product" />
         @endforeach

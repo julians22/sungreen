@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="mt-20">
+<section class="mt-18 md:mt-20">
     <div
         x-data="{
             showLightbox: false,
@@ -41,12 +41,15 @@
                     </template>
 
                     <template x-if="item.type === 'video'">
-                        <div class="relative w-full h-full">
+                        <div class="relative w-full h-full flex items-center justify-center">
                             <video :src="item.video_url" 
                                 preload="metadata" 
                                 muted 
                                 class="w-full h-full object-cover hover:scale-105 transition duration-300">
                             </video>
+                            <div class="absolute bg-black/40 p-1 md:p-3 rounded-full backdrop-blur-sm pointer-events-auto flex items-center justify-center">
+                                @svg('heroicon-s-play', 'w-4 md:w-12 text-white')
+                            </div>
                         </div>
                     </template>
 
@@ -92,8 +95,7 @@
 
                 <template x-if="items[currentIndex] && items[currentIndex].type === 'video'">
                     <div class="w-full aspect-video">
-                        <!-- Tambahkan x-ref="activeVideo" di sini -->
-                        <video x-ref="activeVideo" controls autoplay class="w-full h-full rounded shadow-2xl object-contain bg-black" :src="items[currentIndex].video_url"></video>
+                        <video x-ref="activeVideo" controls autoplay class="w-full h-full object-contain md:aspect-video bg-[#052824]" :src="items[currentIndex].video_url"></video>
                     </div>
                 </template>
 
