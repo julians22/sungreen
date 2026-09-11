@@ -65,7 +65,7 @@
                     <img src="{{ $product->getFirstMediaUrl('thumbnail', 'medium') }}" alt="{{ $product->name }}" class="w-full h-75 md:h-48 object-cover">
                     <div class="flex flex-col flex-1 justify-between p-4">
                         <h3 class="mb-2 font-bold text-dark text-lg">{{ $product->name }}</h3>
-                        <p class="mb-4 text-dark text-sm">{{ Str::limit($product->description, 100) }}</p>
+                        <div class="mb-4 text-dark text-sm">{!! Str::limit($product->description, 100) !!}</div>
                         {{-- <a href="{{ route('products.show', $product) }}" class="inline-block bg-dark hover:bg-gray-800 mt-auto px-4 py-2 rounded text-white transition">Lihat Detail</a> --}}
                     </div>
                 </div>
@@ -419,7 +419,7 @@
 
 <!-- Siap Membantu Kesuksesan Usaha Pertanian Anda -->
 <section
-    style=" --tw-bg-image: url({{ asset('img/background-contact-crop.png') }});"
+    style=" --tw-bg-image: url({{ asset('img/bg-contact-real.png') }});"
     class="bg-(image:--tw-bg-image) bg-cover bg-top pt-2 md:pt-8 aspect-square md:aspect-auto min-h-auto md:min-h-screen ">
 
     <x-section-title
