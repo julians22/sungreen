@@ -100,7 +100,7 @@
                 </template>
 
                 <!-- Title Gallery / Video -->
-                <div class="mt-3 font-semibold text-lg text-white text-center" x-text="items[currentIndex]?.title"></div>
+                <div class="mt-3 font-semibold text-base text-white text-center" x-text="items[currentIndex]?.title"></div>
 
                 <!-- Indikator Angka (Contoh: 1 / 4) -->
                 <div class="bg-black/40 mt-2 px-3 py-1 rounded-full font-medium text-white/80 text-sm">

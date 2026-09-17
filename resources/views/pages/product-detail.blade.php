@@ -47,7 +47,7 @@
 
                     <div class="py-6">
                         <h2 class="font-semibold text-dark text-2xl">Deskripsi Produk</h2>
-                        <div class="mt-2 text-dark/80">{!! $product->description !!}</div>
+                        <div class="mt-2 text-dark/80 prose max-w-none">{!! $product->description !!}</div>
                     </div>
 
                     {{-- belum tau kepake apa ngga --}}

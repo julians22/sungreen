@@ -21,10 +21,10 @@
     <div class="gap-10 grid grid-cols-1 md:grid-cols-2 mx-auto px-2 md:px-0 container">
         <div>
             <h2 class="text-3xl text-justify font-bold 2xl:tracking-tight">
-                Menjadikan SunGreen Pilihan Bermanfaat dan Menguntungkan bagi Petani dan Pekebun
+                Menjadikan SunGreen Pilihan Bermanfaat dan Menguntungkan bagi Petani
             </h2>
             <p class="text-lg text-justify 2xl:text-xl leading-loose mt-4">
-                SunGreen hadir bukan sekadar sebagai produk, tapi juga sebagai mitra pertumbuhan bagi petani, peternak, pekebun, dan pembudidaya agrikultur Indonesia dengan menyediakan perlengkapan dan perlindungan yang kuat, tahan lama, dan modern untuk meningkatkan produktivitas, membuat pekerjaan lebih aman, dan mendorong efisiensi yang berkelanjutan.
+                SunGreen hadir bukan sekadar sebagai produk, tapi juga sebagai mitra pertumbuhan bagi petani, peternak dan pembudidaya agrikultur Indonesia dengan menyediakan perlengkapan dan perlindungan yang kuat, tahan lama, dan modern untuk meningkatkan produktivitas, membuat pekerjaan lebih aman, dan mendorong efisiensi yang berkelanjutan.
                 <br>
                 Di tengah perubahan iklim, cuaca ekstrem, dan tuntutan hasil panen berkualitas tinggi, SunGreen berperan sebagai solusi perlindungan yang cerdas, membantu meningkatkan produktivitas, efisiensi, dan keberlanjutan sektor agrikultur lokal.
             </p>

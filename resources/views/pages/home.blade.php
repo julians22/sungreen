@@ -62,7 +62,7 @@
         <div class="gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10">
             @foreach ($products as $product)
                 <div class="flex flex-col bg-white shadow-lg rounded-lg aspect-square overflow-hidden">
-                    <img src="{{ $product->getFirstMediaUrl('thumbnail', 'medium') }}" alt="{{ $product->name }}" class="w-full h-75 md:h-48 object-cover">
+                    <img src="{{ $product->getFirstMediaUrl('thumbnail', 'medium') }}" alt="{{ $product->name }}" class="w-full h-52 md:h-48 object-cover">
                     <div class="flex flex-col flex-1 justify-between p-4">
                         <h3 class="mb-2 font-bold text-dark text-lg">{{ $product->name }}</h3>
                         <div class="mb-4 text-dark text-sm">{!! Str::limit($product->description, 100) !!}</div>
@@ -92,7 +92,7 @@
             <img src="{{ asset('img/featrued-prod-alternate-2.png') }}" alt="Featured Product" class=" w-full h-full">
         </div>
 
-        <div class="space-y-6 bg-secondary p-6 3xl:pt-24 md:pl-20">
+        <div class="space-y-6 bg-secondary p-6 3xl:pt-35 md:pl-20">
             <img src="{{ asset('img/logo-black.png') }}" alt="" class="mb-4 h-12">
             <h3 class="font-bold text-in-secondary text-6xl">Plastic UV <br> <span class="text-base">200 Micron</span></h3>
             <div class="space-y-6 max-w-5/6 text-dark text-lg 2xl:text-lg leading-relaxed tracking-normal">
@@ -109,7 +109,7 @@
                     Dengan perlindungan dan fitur dirancang khusus, Sungreen Plastic UV membantu menciptakan lingkungan tumbuh yang ideal dan produktif bagi berbagai jenis tanaman.
                 </p>
 
-                <a href="https://wa.me/085776582728" class="btn-green 3xl:mt-8 inline-flex items-center gap-2">
+                <a href="https://wa.me/085776582728" class="btn-green 2xl:mt-8 inline-flex items-center gap-2">
     Hubungi Kami
     @svg('bi-whatsapp', 'w-6 h-6')
 </a>
@@ -134,11 +134,11 @@
             {{-- Specs Key around the image --}}
             {{-- 8 keys orbiting in a wider circle --}}
             {{-- ver desktop --}}
-            <ul class="hidden md:block absolute inset-0">
+            <ul class="hidden md:block absolute inset-0 tracking-wide">
                 {{-- 1. Top Center --}}
                 <li class="top-[0%] left-[50%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>UKURAN:</b> <br>
+                        <b class="tracking-widest">UKURAN:</b> <br>
                         <span class="font-normal">Panjang 50 Meter & Lebar Variatif</span>
                     </p>
                 </li>
@@ -146,7 +146,7 @@
                 {{-- 2. Top Right --}}
                 <li class="top-[18%] left-[100%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>DAYA TAHAN:</b> <br>
+                        <b class="tracking-widest">DAYA TAHAN:</b> <br>
                         <span class="font-normal">Tahan 5 Tahun Penggunaan</span>
                     </p>
                 </li>
@@ -154,7 +154,7 @@
                 {{-- 3. Middle Right --}}
                 <li class="top-[50%] left-[95%] specs-item hidden">
                     <p class="font-bold text-xs">
-                        <b>TRANSMISI CAHAYA:</b> <br>
+                        <b class="tracking-widest">TRANSMISI CAHAYA:</b> <br>
                         <span class="font-normal">± 80–90 %</span>
                     </p>
                 </li>
@@ -162,7 +162,7 @@
                 {{-- 4. Bottom Right --}}
                 <li class="top-[82%] left-[100%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>KETERSEDIAAN:</b> <br>
+                        <b class="tracking-widest">KETERSEDIAAN:</b> <br>
                         <span class="font-normal">
                             Tersedia di toko pertanian dan perkebunan terdekat
                         </span>
@@ -172,7 +172,7 @@
                 {{-- 5. Bottom Center --}}
                 <li class="top-[100%] left-[50%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>PEMASANGAN:</b> <br>
+                        <b class="tracking-widest">PEMASANGAN:</b> <br>
                         <span class="font-normal">Sangat Elastis Tanpa Perlu Dijemur Terlebih Dahulu</span>
                     </p>
                 </li>
@@ -180,7 +180,7 @@
                 {{-- 6. Bottom Left --}}
                 <li class="top-[82%] left-[6%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>HARGA:</b> <br>
+                        <b class="tracking-widest">HARGA:</b> <br>
                         <span class="font-normal">
                             Bersahabat untuk Kualitas Terbaik
                         </span>
@@ -190,7 +190,7 @@
                 {{-- 7. Middle Left --}}
                 <li class="top-[50%] left-[5%] specs-item hidden">
                     <p class="font-bold text-xs">
-                        <b>LEBAR MAX:</b> <br>
+                        <b class="tracking-widest">LEBAR MAX:</b> <br>
                         <span class="font-normal">
                             3 – 6 meter
                         </span>
@@ -200,7 +200,7 @@
                 {{-- 8. Top Left --}}
                 <li class="top-[18%] left-[6%] specs-item">
                     <p class="font-bold text-xs">
-                        <b>KETEBALAN:</b> <br>
+                        <b class="tracking-widest">KETEBALAN:</b> <br>
                         <span class="font-normal">
                             200 Mikron
                         </span>
@@ -329,7 +329,7 @@
 
                 <div class="max-w-4/5">
                     <p class="font-bold text-white text-center">
-                        Memberi fleksibilitas bagi petani atau pengusaha greenhouse dari skala kecil hingga besar
+                        Memberi fleksibilitas bagi petani, pekebun, dan pengusaha greenhouse dari skala kecil hingga besar
                     </p>
                 </div>
 
@@ -419,7 +419,7 @@
 
 <!-- Siap Membantu Kesuksesan Usaha Pertanian Anda -->
 <section
-    style=" --tw-bg-image: url({{ asset('img/bg-contact-real.png') }});"
+    style=" --tw-bg-image: url({{ asset('img/bg-contactxxx.png') }});"
     class="bg-(image:--tw-bg-image) bg-cover bg-top pt-2 md:pt-8 aspect-square md:aspect-auto min-h-auto md:min-h-screen ">
 
     <x-section-title
