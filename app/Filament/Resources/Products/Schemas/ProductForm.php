@@ -52,6 +52,7 @@ class ProductForm
                                     ->label('Features')
                                     ->toolbarButtons([
                                         'bold',
+                                        [ToolbarButtonGroup::make('Paragraph', ['paragraph', 'h1', 'h2', 'h3'])->textualButtons()],
                                         'italic',
                                         'underline',
                                         'strike',

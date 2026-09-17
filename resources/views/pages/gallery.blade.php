@@ -95,7 +95,7 @@
 
                 <template x-if="items[currentIndex] && items[currentIndex].type === 'video'">
                     <div class="w-full aspect-video">
-                        <video x-ref="activeVideo" controls autoplay class="w-full h-full object-contain md:aspect-video bg-[#052824]" :src="items[currentIndex].video_url"></video>
+                        <video x-ref="activeVideo" controls muted autoplay class="w-full h-full object-contain md:aspect-video bg-[#052824]" :src="items[currentIndex].video_url"></video>
                     </div>
                 </template>
 

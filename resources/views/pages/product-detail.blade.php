@@ -58,7 +58,7 @@
 
                     <div class="py-6">
                         <h2 class="font-semibold text-dark text-2xl">Fitur Produk</h2>
-                        <div class="mt-2 text-dark/80">{!! $product->additional_info['features'] ?? 'N/A' !!}</div>
+                        <div class="mt-2 text-dark/80 prose max-w-none">{!! $product->additional_info['features'] ?? 'N/A' !!}</div>
                     </div>
 
                     <div class="py-6">
