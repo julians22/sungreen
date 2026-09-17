@@ -92,7 +92,7 @@
             <img src="{{ asset('img/featrued-prod-alternate-2.png') }}" alt="Featured Product" class=" w-full h-full">
         </div>
 
-        <div class="space-y-6 bg-secondary p-6 3xl:pt-35 md:pl-20">
+        <div class="space-y-6 bg-secondary p-6 2xl:pt-25 md:pl-20">
             <img src="{{ asset('img/logo-black.png') }}" alt="" class="mb-4 h-12">
             <h3 class="font-bold text-in-secondary text-6xl">Plastic UV <br> <span class="text-base">200 Micron</span></h3>
             <div class="space-y-6 max-w-5/6 text-dark text-lg 2xl:text-lg leading-relaxed tracking-normal">
@@ -109,7 +109,7 @@
                     Dengan perlindungan dan fitur dirancang khusus, Sungreen Plastic UV membantu menciptakan lingkungan tumbuh yang ideal dan produktif bagi berbagai jenis tanaman.
                 </p>
 
-                <a href="https://wa.me/085776582728" class="btn-green 2xl:mt-8 inline-flex items-center gap-2">
+                <a href="https://wa.me/085776582728" class="btn-green 2xl:mt-6 inline-flex items-center gap-2">
     Hubungi Kami
     @svg('bi-whatsapp', 'w-6 h-6')
 </a>
