@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Products\Schemas;
 
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -10,6 +11,7 @@ use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\RichEditor\ToolbarButtonGroup;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 
 class ProductForm
@@ -46,7 +48,48 @@ class ProductForm
                                         'blockquote',
                                     ])
                                     ->required(),
-
+                                Repeater::make('sliders')
+                    ->label('Produk Slider')
+                    ->schema([
+                        Select::make('desktop_position')
+                            ->options([
+                        'top_center'    => 'Top Center',
+                        'top_right'     => 'Top Right',
+                        'top_left'      => 'Top Left',
+                        'bottom_right'  => 'Bottom Right',
+                        'bottom_left'   => 'Bottom Left',
+                        'bottom_center' => 'Bottom Center',
+                            ])
+                            ->distinct()
+                            ->required(),
+                            Select::make('mobile_position')
+            ->label('Urutan / Posisi (Mobile)')
+            ->options([
+                '1' => 'Urutan Pertama (1)',
+                '2' => 'Urutan Kedua (2)',
+                '3' => 'Urutan Ketiga (3)',
+                '4' => 'Urutan Keempat (4)',
+                '5' => 'Urutan Kelima (5)',
+                '6' => 'Urutan Keenam (6)',
+                '7' => 'Urutan Ketujuh (7)',
+                '8' => 'Urutan Kedelapan (8)',
+            ])
+            ->required(),
+                            TextInput::make('title')
+                            ->label('Judul')
+                            ->required(),
+                            Textarea::make('description')
+                            ->label('Deskripsi Produk'),
+                            FileUpload::make('image')
+                            ->label('Gambar Produk')
+                            ->disk('public')
+                            ->image()
+                    ])
+                    ->columns(1)
+                    ->collapsible()
+                    ->columnSpanFull()
+                    ->addActionLabel('Tambah Slider')
+                    ->collapsed(),
                                 // Features
                                 RichEditor::make('additional_info.features')
                                     ->label('Features')

@@ -8,9 +8,9 @@
     <div class="mx-auto px-2 md:px-0 py-10 md:py-20 container">
 
         <div class="gap-0 md:gap-10 grid grid-cols-12">
-            <div class="col-span-12 md:col-span-5">
+            <div class="col-span-12 md:col-span-5 md:self-start md:flex md:flex-col md:w-full">
     <!-- Main Slider -->
-    <section id="main-slider" class="splide">
+    <section id="main-slider" class="splide md:w-full md:min-w-0">
         <div class="splide__track">
             <ul class="splide__list">
                 @foreach ($product->getMedia('thumbnail') as $media)
@@ -24,7 +24,7 @@
         </div>
     </section>
 <!-- Thumbnail Slider (Pagination) -->
-<section id="thumbnail-slider" class="splide">
+<section id="thumbnail-slider" class="splide md:w-full md:min-w-0">
     <div class="splide__track !h-[400px] md:!h-[90px]">
         <ul class="splide__list !h-[400px] md:!h-[90px] items-center">
             @foreach ($product->getMedia('thumbnail') as $media)
@@ -41,36 +41,37 @@
             <div class="col-span-12 md:col-span-7">
                 <div class="divide-y-2 divide-dark">
 
-                    <div class="py-6">
+                    <div class="py-3">
                         <h1 class="font-semibold text-primary text-4xl">{{ $product->name }}</h1>
                     </div>
 
-                    <div class="py-6">
+                    <div class="py-3">
                         <h2 class="font-semibold text-dark text-2xl">Deskripsi Produk</h2>
-                        <div class="mt-2 text-dark/80 prose max-w-none">{!! $product->description !!}</div>
+                        <div class="mt-2 text-dark/80 max-w-none">{!! $product->description !!}</div>
                     </div>
 
                     {{-- belum tau kepake apa ngga --}}
-                    <div class="py-6 hidden">
+                    <div class="py-3 hidden">
                         <h2 class="font-semibold text-dark text-2xl">Kualitas Produk</h2>
                         <div class="mt-2 text-dark/80">{!! $product->additional_info['quality'] ?? 'N/A' !!}</div>
                     </div>
 
-                    <div class="py-6">
+                    <div class="py-3">
                         <h2 class="font-semibold text-dark text-2xl">Fitur Produk</h2>
-                        <div class="mt-2 text-dark/80 prose max-w-none">{!! $product->additional_info['features'] ?? 'N/A' !!}</div>
+                        <div class="mt-2 text-dark/80 max-w-none">{!! $product->additional_info['features'] ?? 'N/A' !!}</div>
                     </div>
 
-                    <div class="py-6">
+                    <div class="py-3">
 
                         <!-- CTA Featured product -->
+            @if ($product->relatedProducts->isNotEmpty())
                         <div class="flex gap-4">
                             <a href="#produk-serupa"
                                 class="bg-primary hover:bg-primary/80 px-6 py-3 rounded-lg text-white transition duration-300">
                                 Produk Serupa
                             </a>
                         </div>
-
+            @endif
                     </div>
                 </div>
             </div>
@@ -92,7 +93,7 @@
                         @endforeach
                     </div>
                 </div>
-            @else
+            {{-- @else
                 <div class="mt-10 md:mt-28">
                     <x-section-title
                         border-class="bg-dark"
@@ -101,7 +102,7 @@
                     </x-section-title>
 
                     <p class="mt-4 text-dark/80">Tidak ada produk serupa yang tersedia.</p>
-                </div>
+                </div> --}}
             @endif
         </div>
 

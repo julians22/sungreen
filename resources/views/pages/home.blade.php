@@ -63,7 +63,7 @@
             @foreach ($products as $product)
                 <div class="flex flex-col bg-white shadow-lg rounded-lg aspect-square overflow-hidden">
                     <img src="{{ $product->getFirstMediaUrl('thumbnail', 'medium') }}" alt="{{ $product->name }}" class="w-full h-52 md:h-48 object-cover">
-                    <div class="flex flex-col flex-1 justify-between p-4">
+                    <div class="flex flex-col flex-1 lg:gap-4 p-4">
                         <h3 class="mb-2 font-bold text-dark text-lg">{{ $product->name }}</h3>
                         <div class="mb-4 text-dark text-sm">{!! Str::limit($product->description, 100) !!}</div>
                         {{-- <a href="{{ route('products.show', $product) }}" class="inline-block bg-dark hover:bg-gray-800 mt-auto px-4 py-2 rounded text-white transition">Lihat Detail</a> --}}
@@ -119,7 +119,8 @@
 </section>
 
 <!-- Product Features -->
-<section class="bg-white pb-10 md:pb-24">
+<section id="image-slider" class="bg-white pb-10 md:pb-12 splide max-w-full container md:max-w-6xl mx-auto"
+    aria-label="Product">
     <x-section-title
         border-class="bg-dark"
     >
@@ -127,147 +128,33 @@
     </x-section-title>
 
 
-    <div class="mx-auto mt-10 md:mt-24 px-2 md:px-0 max-w-4xl container">
-        <div class="relative p-2 md:p-8">
-            <img src="{{ asset('img/specs.png') }}" class="mx-auto w-full max-w-[600px] h-auto" alt="">
+    <div class="mx-auto mt-10 md:mt-10 px-2 md:px-0">
+        <div class="splide__track lg:h-[450px] relative p-2 md:p-0">
+            <ul class="splide__list">
+    @forelse($slidersHome as $slider)
+    <li class="splide__slide">
+        <picture>
+            @if($slider->sliders_desktop)
+                <source media="(min-width: 768px)" srcset="{{ asset('storage/' . $slider->sliders_desktop) }}">
+            @endif
 
-            {{-- Specs Key around the image --}}
-            {{-- 8 keys orbiting in a wider circle --}}
-            {{-- ver desktop --}}
-            <ul class="hidden md:block absolute inset-0 tracking-wide">
-                {{-- 1. Top Center --}}
-                <li class="top-[0%] left-[50%] specs-item">
-                    <p class="font-bold text-xs">
-                        <b class="tracking-widest">UKURAN:</b> <br>
-                        <span class="font-normal">Panjang 50 Meter & Lebar Variatif</span>
-                    </p>
-                </li>
+            <img src="{{ asset('storage/' . ($slider->sliders_mobile ?: $slider->sliders_desktop)) }}"
+                 class="mx-auto w-full h-auto"
+                 alt="Fitur & Spesifikasi Produk">
+        </picture>
+    </li>
+@empty
+    <li class="splide__slide">
+        <img src="{{ asset('img/Fitur & Spesifikasi_Dekstoop.png') }}"
+             class="mx-auto w-full h-auto"
+             alt="Default Specs">
+    </li>
+@endforelse
+</ul>
 
-                {{-- 2. Top Right --}}
-                <li class="top-[18%] left-[100%] specs-item">
-                    <p class="font-bold text-xs">
-                        <b class="tracking-widest">DAYA TAHAN:</b> <br>
-                        <span class="font-normal">Tahan 5 Tahun Penggunaan</span>
-                    </p>
-                </li>
-
-                {{-- 3. Middle Right --}}
-                <li class="top-[50%] left-[95%] specs-item hidden">
-                    <p class="font-bold text-xs">
-                        <b class="tracking-widest">TRANSMISI CAHAYA:</b> <br>
-                        <span class="font-normal">± 80–90 %</span>
-                    </p>
-                </li>
-
-                {{-- 4. Bottom Right --}}
-                <li class="top-[82%] left-[100%] specs-item">
-                    <p class="font-bold text-xs">
-                        <b class="tracking-widest">KETERSEDIAAN:</b> <br>
-                        <span class="font-normal">
-                            Tersedia di toko pertanian dan perkebunan terdekat
-                        </span>
-                    </p>
-                </li>
-
-                {{-- 5. Bottom Center --}}
-                <li class="top-[100%] left-[50%] specs-item">
-                    <p class="font-bold text-xs">
-                        <b class="tracking-widest">PEMASANGAN:</b> <br>
-                        <span class="font-normal">Sangat Elastis Tanpa Perlu Dijemur Terlebih Dahulu</span>
-                    </p>
-                </li>
-
-                {{-- 6. Bottom Left --}}
-                <li class="top-[82%] left-[6%] specs-item">
-                    <p class="font-bold text-xs">
-                        <b class="tracking-widest">HARGA:</b> <br>
-                        <span class="font-normal">
-                            Bersahabat untuk Kualitas Terbaik
-                        </span>
-                    </p>
-                </li>
-
-                {{-- 7. Middle Left --}}
-                <li class="top-[50%] left-[5%] specs-item hidden">
-                    <p class="font-bold text-xs">
-                        <b class="tracking-widest">LEBAR MAX:</b> <br>
-                        <span class="font-normal">
-                            3 – 6 meter
-                        </span>
-                    </p>
-                </li>
-
-                {{-- 8. Top Left --}}
-                <li class="top-[18%] left-[6%] specs-item">
-                    <p class="font-bold text-xs">
-                        <b class="tracking-widest">KETEBALAN:</b> <br>
-                        <span class="font-normal">
-                            200 Mikron
-                        </span>
-                    </p>
-                </li>
-            </ul>
 
             {{-- ver mobile --}}
-            <ul class="md:hidden gap-4 grid grid-cols-2">
-                <li class="specs-item">
-                    <p class="font-bold text-xs">
-                        <b>KETEBALAN:</b> <br>
-                        <span class="font-normal">200 Mikron</span>
-                    </p>
-                </li>
-                <li class="specs-item">
-                    <p class="font-bold text-xs">
-                        <b>DAYA TAHAN:</b> <br>
-                        <span class="font-normal">Tahan 5 Tahun Penggunaan</span>
-                    </p>
-                </li>
-                <li class="specs-item">
-                    <p class="font-bold text-xs">
-                        <b>PEMASANGAN:</b> <br>
-                        <span class="font-normal">Sangat Elastis Tanpa Perlu Dijemur Terlebih Dahulu</span>
-                    </p>
-                </li>
-                <li class="specs-item">
-                    <p class="font-bold text-xs">
-                        <b>HARGA:</b> <br>
-                        <span class="font-normal">
-                            Bersahabat untuk Kualitas Terbaik
-                        </span>
-                    </p>
-                </li>
-                <li class="specs-item">
-                    <p class="font-bold text-xs">
-                        <b>KETERSEDIAAN:</b> <br>
-                        <span class="font-normal">Tersedia di toko pertanian dan perkebunan terdekat</span>
-                    </p>
-                </li>
-                <li class="specs-item">
-                    <p class="font-bold text-xs">
-                        <b>UKURAN:</b> <br>
-                        <span class="font-normal">
-                            Panjang 50 Meter & Lebar Variatif
-                        </span>
-                    </p>
-                </li>
-                {{-- hide sementara --}}
-                <li class="specs-item hidden">
-                    <p class="font-bold text-xs">
-                    <b>LEBAR MAX:</b> <br>
-                    <span class="font-normal">
-                        3 – 6 meter
-                    </span>
-                </li>
-                <li class="specs-item hidden">
-                    <p class="font-bold text-xs">
-                        <b>KETEBALAN:</b> <br>
-                        <span class="font-normal">
-                            200 Mikron
-                        </span>
-                    </p>
-                </li>
-
-            </ul>
+            
         </div>
     </div>
 
@@ -372,7 +259,7 @@
 
                                         </div>
                                         <p class="text-dark text-xs max-w-4/5 md:text-lg text-center italic">"{{ $review->comment }}"</p>
-                                        <p class="font-bold text-base md:text-2xl"><span class="text-primary">-{{ $review->name }},</span> {{ $review->after_name }}</p>
+                                        <p class="font-bold text-base md:text-2xl"><span class="text-primary">-{{ $review->name }}</span> {{ $review->after_name }}</p>
                                     </div>
                                 </div>
                             </div>

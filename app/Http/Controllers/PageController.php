@@ -10,11 +10,23 @@ class PageController extends Controller
 
     public function home()
     {
-        $products = \App\Models\Product::with('category')->latest()->take(4)->get();
+        $products = \App\Models\Product::with('category')->orderBy('sort','asc')->take(4)->get();
         $reviews = \App\Models\Review::where('is_active', true)->latest()->take(5)->get();
         $faqs = \App\Models\Faq::latest()->take(5)->get();
-
-        return view('pages.home', compact('products', 'reviews', 'faqs'));
+        $slidersHome = \App\Models\SliderHome::latest()->get();
+    
+        
+        // $firstItem = collect($slidersHome?->sliders ?? [])->first();
+        // $positions = ['top_center', 'top_right', 'top_left', 'bottom_right', 'bottom_left', 'bottom_center'];
+        // $desktopSliders = collect($positions)
+        // ->mapWithKeys(fn ($pos) => [$pos => $firstItem[$pos] ?? null])
+        // ->filter(fn ($block) => filled($block['title'] ?? null));
+        //  $mobileSliders = $desktopSliders
+        // ->sortBy(fn ($block) => (int) ($block['mobile'] ?? 99))
+        // ->values();
+        // $mainImages = $firstItem['image'] ?? null;
+        return view('pages.home', compact(
+            'products', 'reviews', 'faqs','slidersHome'));
     }
 
     public function about()
@@ -24,7 +36,7 @@ class PageController extends Controller
 
     public function products()
     {
-        $products = \App\Models\Product::with('category')->latest()->take(12)->get();
+        $products = \App\Models\Product::with('category')->orderBy('sort','asc')->take(12)->get();
         return view('pages.products', compact('products'));
     }
 
@@ -104,5 +116,6 @@ class PageController extends Controller
 
         return redirect()->route('contact')->with('success', 'Pesan Anda telah dikirim. Terima kasih!');
     }
+
 
 }

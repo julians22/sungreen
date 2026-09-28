@@ -8,9 +8,10 @@ let splideInstances = [];
 
 document.addEventListener('DOMContentLoaded', function () {
     initProductGallerySlider();
+    initSliderImages();
     // initialize all splide instances, get them by data attribute
     document.querySelectorAll('.splide').forEach(function (element) {
-        if (element.id !== 'main-slider' && element.id !== 'thumbnail-slider') {
+        if (element.id !== 'main-slider' && element.id !== 'thumbnail-slider' && element.id !== 'image-slider') {
             initializeSplide(element);
         }
     });
@@ -36,7 +37,11 @@ function initProductGallerySlider() {
         perMove: 1,
         pagination: true,
         arrows: false,
-        fixedHeight: 1,
+        breakpoints: {
+            768: {
+                    fixedHeight: 1,
+                }
+        }
     });
 
     const thumbnails = new Splide(thumbEl, {
@@ -57,7 +62,36 @@ function initProductGallerySlider() {
 
     splideInstances.push(main, thumbnails);
 }
+ function initSliderImages() {
+        const imgEl = document.getElementById('image-slider');
 
+        if (!imgEl) return;
+
+        const slides = imgEl.querySelectorAll('.splide__slide');
+        const hasMultiple = slides.length > 1;
+        const main = new Splide(imgEl, {
+            type: 'slide',
+            rewind: true,
+            rewindSpeed: 1500,
+    perPage: 1,
+    perMove: 1,
+    pagination: true,
+    autoplay: true,
+    arrows: hasMultiple,
+    autoHeight: true,
+    // mediaQuery: 'min',
+    breakpoints: {
+        640: {
+            gap: '1rem',
+            padding: '1rem',
+        },
+        768: {
+            gap: '2rem',
+            padding: '2rem',
+        },
+    }
+        }).mount();
+}
 const OPTIONS_SINGLE_FULL = {
     type: 'loop',
     perPage: 1,
@@ -80,5 +114,7 @@ const OPTIONS_SINGLE_FULL = {
         },
     }
 }
+
+
 
 

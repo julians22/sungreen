@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Override;
 use Spatie\Image\Enums\CropPosition;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -14,7 +15,13 @@ class Product extends Model implements HasMedia
 {
     use HasSlug, InteractsWithMedia, HasFactory;
 
-    protected $fillable = ['name', 'slug', 'description', 'additional_info', 'category_id'];
+    protected $fillable = ['name', 
+                            'slug', 
+                            'description', 
+                            'additional_info', 
+                            'category_id',
+                            'sort',
+                        ];
 
     protected $casts = [
         'additional_info' => 'array',
@@ -63,5 +70,26 @@ class Product extends Model implements HasMedia
             ->format('webp')
             ->width(500)
             ->nonQueued();
+    }
+
+    #[Override]
+    public static function booted()
+    {
+        static::creating(function ($product) {
+            if (empty($product->sort)) {
+                $maxSort = self::max('sort');
+                $product->sort = $maxSort + 1;
+            }
+        });
+    }
+
+    public function getSlider($position)
+    {
+        return collect($this->sliders)->where('desktop_position', $position)->first();
+    }
+
+    public function getSliderMobile($position)
+    {
+        return collect($this->sliders ?? [])->sortBy(fn($item) => (int) ($item['mobile_position'] ?? 0))->where('mobile_position', $position)->first();
     }
 }
