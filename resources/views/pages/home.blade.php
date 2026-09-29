@@ -119,7 +119,7 @@
 </section>
 
 <!-- Product Features -->
-<section id="image-slider" class="bg-white pb-10 md:pb-12 splide max-w-full container md:max-w-6xl mx-auto"
+<section id="image-slider" class="bg-white pb-10 md:pb-12 splide max-w-full container md:max-w-6xl mx-auto aspect-square md:aspect-auto"
     aria-label="Product">
     <x-section-title
         border-class="bg-dark"

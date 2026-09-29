@@ -50,7 +50,6 @@
                         <div class="mt-2 text-dark/80 max-w-none">{!! $product->description !!}</div>
                     </div>
 
-                    {{-- belum tau kepake apa ngga --}}
         @foreach ($product->additional_info as $additional)
             @switch($additional['type'])
                 @case('paragraph')
@@ -61,13 +60,7 @@
                 @endswitch
         @endforeach
 
-                    <div class="py-3 hidden">
-                        <h2 class="font-semibold text-dark text-2xl">Fitur Produk</h2>
-                        <div class="mt-2 text-dark/80 max-w-none">{!! $product->additional_info['features'] ?? 'N/A' !!}</div>
-                    </div>
-
                     <div class="py-3">
-
                         <!-- CTA Featured product -->
             @if ($product->relatedProducts->isNotEmpty())
                         <div class="flex gap-4">
