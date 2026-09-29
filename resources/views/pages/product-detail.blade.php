@@ -51,12 +51,17 @@
                     </div>
 
                     {{-- belum tau kepake apa ngga --}}
-                    <div class="py-3 hidden">
-                        <h2 class="font-semibold text-dark text-2xl">Kualitas Produk</h2>
-                        <div class="mt-2 text-dark/80">{!! $product->additional_info['quality'] ?? 'N/A' !!}</div>
-                    </div>
+        @foreach ($product->additional_info as $additional)
+            @switch($additional['type'])
+                @case('paragraph')
+                <div class="py-3">
+                    <div class="font-semibold text-dark text-2xl">{!! $additional['data']['heading'] !!}</div>
+                    <div class="mt-2 text-dark/80">{!! $additional['data']['content'] !!}</div>
+                </div>
+                @endswitch
+        @endforeach
 
-                    <div class="py-3">
+                    <div class="py-3 hidden">
                         <h2 class="font-semibold text-dark text-2xl">Fitur Produk</h2>
                         <div class="mt-2 text-dark/80 max-w-none">{!! $product->additional_info['features'] ?? 'N/A' !!}</div>
                     </div>

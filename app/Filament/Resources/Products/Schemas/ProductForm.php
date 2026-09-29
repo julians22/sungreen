@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\Products\Schemas;
 
+use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
@@ -48,51 +50,13 @@ class ProductForm
                                         'blockquote',
                                     ])
                                     ->required(),
-                                Repeater::make('sliders')
-                    ->label('Produk Slider')
-                    ->schema([
-                        Select::make('desktop_position')
-                            ->options([
-                        'top_center'    => 'Top Center',
-                        'top_right'     => 'Top Right',
-                        'top_left'      => 'Top Left',
-                        'bottom_right'  => 'Bottom Right',
-                        'bottom_left'   => 'Bottom Left',
-                        'bottom_center' => 'Bottom Center',
-                            ])
-                            ->distinct()
-                            ->required(),
-                            Select::make('mobile_position')
-            ->label('Urutan / Posisi (Mobile)')
-            ->options([
-                '1' => 'Urutan Pertama (1)',
-                '2' => 'Urutan Kedua (2)',
-                '3' => 'Urutan Ketiga (3)',
-                '4' => 'Urutan Keempat (4)',
-                '5' => 'Urutan Kelima (5)',
-                '6' => 'Urutan Keenam (6)',
-                '7' => 'Urutan Ketujuh (7)',
-                '8' => 'Urutan Kedelapan (8)',
-            ])
-            ->required(),
-                            TextInput::make('title')
-                            ->label('Judul')
-                            ->required(),
-                            Textarea::make('description')
-                            ->label('Deskripsi Produk'),
-                            FileUpload::make('image')
-                            ->label('Gambar Produk')
-                            ->disk('public')
-                            ->image()
-                    ])
-                    ->columns(1)
-                    ->collapsible()
-                    ->columnSpanFull()
-                    ->addActionLabel('Tambah Slider')
-                    ->collapsed(),
-                                // Features
-                                RichEditor::make('additional_info.features')
-                                    ->label('Features')
+                                Builder::make('additional_info')
+                                    ->label('Paragraph New')
+                                    ->columnSpanFull()
+                                    ->blocks([
+                                        Block::make('paragraph')
+                                        ->schema([
+                                     RichEditor::make('heading')
                                     ->toolbarButtons([
                                         'bold',
                                         [ToolbarButtonGroup::make('Paragraph', ['paragraph', 'h1', 'h2', 'h3'])->textualButtons()],
@@ -104,12 +68,11 @@ class ProductForm
                                         'bulletList',
                                         'orderedList',
                                         'blockquote',
-                                    ])
-                                    ->columnSpanFull(),
-                                // Quality
-                                RichEditor::make('additional_info.quality')
+                                        ]),
+                                     RichEditor::make('content')
                                     ->toolbarButtons([
                                         'bold',
+                                        [ToolbarButtonGroup::make('Paragraph', ['paragraph', 'h1', 'h2', 'h3'])->textualButtons()],
                                         'italic',
                                         'underline',
                                         'strike',
@@ -118,9 +81,40 @@ class ProductForm
                                         'bulletList',
                                         'orderedList',
                                         'blockquote',
-                                    ])
-                                    ->label('Quality')
-                                    ->columnSpanFull(),
+                                        ])
+                                    ]),
+                                ]),
+                                // Features
+                                // RichEditor::make('additional_info.features')
+                                //     ->label('Features')
+                                //     ->toolbarButtons([
+                                //         'bold',
+                                //         [ToolbarButtonGroup::make('Paragraph', ['paragraph', 'h1', 'h2', 'h3'])->textualButtons()],
+                                //         'italic',
+                                //         'underline',
+                                //         'strike',
+                                //         'link',
+                                //         'codeBlock',
+                                //         'bulletList',
+                                //         'orderedList',
+                                //         'blockquote',
+                                //     ])
+                                //     ->columnSpanFull(),
+                                // Quality
+                                // RichEditor::make('additional_info.quality')
+                                //     ->toolbarButtons([
+                                //         'bold',
+                                //         'italic',
+                                //         'underline',
+                                //         'strike',
+                                //         'link',
+                                //         'codeBlock',
+                                //         'bulletList',
+                                //         'orderedList',
+                                //         'blockquote',
+                                //     ])
+                                //     ->label('Quality')
+                                //     ->columnSpanFull(),
                             SpatieMediaLibraryFileUpload::make('thumbnail_products')
                             ->collection('thumbnail')
                             ->appendFiles()
