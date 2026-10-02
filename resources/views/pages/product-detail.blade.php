@@ -60,7 +60,7 @@
                 @endswitch
         @endforeach
 
-                    <div class="py-3">
+                    <div class="py-3 hidden">
                         <!-- CTA Featured product -->
             @if ($product->relatedProducts->isNotEmpty())
                         <div class="flex gap-4">
