@@ -112,7 +112,6 @@ class PageController extends Controller
         ]);
 
         Contact::create($validatedData);
-        dd(request()->all());
 
         return redirect()->route('contact')->with('success', 'Pesan Anda telah dikirim. Terima kasih!');
     }
