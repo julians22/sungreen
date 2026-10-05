@@ -40,7 +40,7 @@
 
     <div class="mx-auto px-2 md:px-0 pt-4 md:pt-48 pb-12 w-full max-w-[960px]">
 
-        <h1 class="font-bold text-white text-4xl text-center">Kami Berdedikasi Untuk Membantu Kesuksesan Usaha Pertanian Anda</h1>
+        <h1 class="font-bold text-white text-xl md:text-4xl text-center">Kami Berdedikasi Untuk Membantu Kesuksesan Usaha Pertanian Anda</h1>
 
         <p class="mt-6 text-white text-lg text-center">
             Sungreen adalah penyedia plastik UV berkualitas tinggi untuk greenhouse, dirancang untuk melindungi tanaman dari paparan sinar UV berlebih sekaligus menjaga kelembapan dan suhu ideal. Dengan material yang kuat, tahan lama, dan dirancang khusus untuk kebutuhan pertanian modern, Sungreen membantu Anda merawat tanaman agar tumbuh lebih sehat, produktif, dan terlindungi sepanjang musim.
@@ -94,7 +94,7 @@
 
         <div class="space-y-6 bg-secondary p-6 2xl:pt-25 md:pl-20">
             <img src="{{ asset('img/logo-black.png') }}" alt="" class="mb-4 h-12">
-            <h3 class="font-bold text-in-secondary text-6xl">Plastic UV <br> <span class="text-base">200 Micron</span></h3>
+            <h3 class="font-bold text-in-secondary text-5xl md:text-6xl">Plastic UV <br> <span class="text-base">200 Micron</span></h3>
             <div class="space-y-6 max-w-5/6 text-dark text-lg 2xl:text-lg leading-relaxed tracking-normal">
 
                 <p>Sungreen Plastic UV terbuat dari material tahan lama dengan perlindungan UV, mampu menstabilkan suhu, mengurangi panas berlebih, dan menjaga kelembapan sehingga mendukung pertumbuhan tanaman sepanjang musim.</p>

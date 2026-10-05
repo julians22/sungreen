@@ -20,7 +20,7 @@
 
     <div class="gap-10 grid grid-cols-1 md:grid-cols-2 mx-auto px-2 md:px-0 container">
         <div>
-            <h2 class="text-3xl text-justify font-bold 2xl:tracking-tight">
+            <h2 class="text-xl md:text-3xl text-left md:text-justify font-bold 2xl:tracking-tight">
                 Menjadikan SunGreen Pilihan Bermanfaat dan Menguntungkan bagi Petani
             </h2>
             <p class="text-lg text-justify 2xl:text-xl leading-loose mt-4">
