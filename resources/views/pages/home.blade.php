@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section ('meta_title', $seo['meta_title'])
+@section ('meta_description', $seo['meta_description'])
+@section ('meta_keywords', $seo['meta_keywords'])
+
 @push('plugin-scripts')
     @vite(['resources/js/splide.js'])
 @endpush

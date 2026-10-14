@@ -7,15 +7,50 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+     public function getSettings()
+    {
+        $currentRoute = request()->route()->getName();
+        $slug = request()->route('slug');
+
+        if ($slug) {
+            $seoProduct = \App\Models\Product::where('slug', $slug)->first();
+
+            if ($seoProduct) {
+                return [
+                    'meta_title' => $seoProduct->meta_title ?? 'Sungreen',
+                    'meta_description' => $seoProduct->meta_description ?? null,
+                    'meta_keywords' => $seoProduct->meta_keywords ?? null,
+                ];
+            }
+        }  
+        
+        $seo = \App\Models\PageSettings::where('meta_key', $currentRoute)->first();
+
+        if ($seo) {
+            return [
+                'meta_title' => $seo->meta_title ?? 'Sungreen',
+                'meta_description' => $seo->meta_description ?? null,
+                'meta_keywords' => $seo->meta_keywords ?? null,
+            ];
+        }
+
+        return [
+            'meta_title' => 'Sungreen',
+            'meta_description' => null,
+            'meta_keywords' => null,
+        ];
+    }
+
+
 
     public function home()
     {
-        $products = \App\Models\Product::with('category')->orderBy('sort','asc')->take(4)->get();
+        $products = \App\Models\Product::with('category')->orderBy('sort', 'asc')->take(4)->get();
         $reviews = \App\Models\Review::where('is_active', true)->latest()->take(5)->get();
         $faqs = \App\Models\Faq::latest()->take(5)->get();
         $slidersHome = \App\Models\SliderHome::latest()->get();
-    
-        
+        $seo = $this->getSettings();
+
         // $firstItem = collect($slidersHome?->sliders ?? [])->first();
         // $positions = ['top_center', 'top_right', 'top_left', 'bottom_right', 'bottom_left', 'bottom_center'];
         // $desktopSliders = collect($positions)
@@ -26,26 +61,34 @@ class PageController extends Controller
         // ->values();
         // $mainImages = $firstItem['image'] ?? null;
         return view('pages.home', compact(
-            'products', 'reviews', 'faqs','slidersHome'));
+            'products',
+            'reviews',
+            'faqs',
+            'slidersHome',
+            'seo'
+        ));
     }
 
     public function about()
     {
-        return view('pages.about');
+        $seo = $this->getSettings();
+        return view('pages.about', compact('seo'));
     }
 
     public function products()
     {
-        $products = \App\Models\Product::with('category')->orderBy('sort','asc')->take(12)->get();
-        return view('pages.products', compact('products'));
+        $seo = $this->getSettings();
+        $products = \App\Models\Product::with('category')->orderBy('sort', 'asc')->take(12)->get();
+        return view('pages.products', compact('products','seo'));
     }
 
     public function productDetail($slug)
     {
+        $seo = $this->getSettings();
         $product = \App\Models\Product::where('slug', $slug)
-        ->with('category', 'relatedProducts', 'media')
-        ->firstOrFail();
-        return view('pages.product-detail', compact('product'));
+            ->with('category', 'relatedProducts', 'media')
+            ->firstOrFail();
+        return view('pages.product-detail', compact('product','seo'));
     }
 
     public function gallery()
@@ -93,12 +136,15 @@ class PageController extends Controller
             return $gallery['items'];
         });
 
-        return view('pages.gallery', compact('items'));
+        $seo = $this->getSettings();
+
+        return view('pages.gallery', compact('items','seo'));
     }
 
     public function contact()
     {
-        return view('pages.contact');
+        $seo = $this->getSettings();
+        return view('pages.contact', compact('seo'));
     }
 
     public function submitContactForm(Request $request)
@@ -116,5 +162,5 @@ class PageController extends Controller
         return redirect()->route('contact')->with('success', 'Pesan Anda telah dikirim. Terima kasih!');
     }
 
-
+   
 }

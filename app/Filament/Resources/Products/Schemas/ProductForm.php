@@ -144,6 +144,17 @@ class ProductForm
                                     ->addActionLabel('Add Related Product')
                             ])
                             ->columnSpan(2),
+                        Section::make('SEO')
+                            ->label('SEO Settings')
+                            ->schema([
+                                TextInput::make('meta_title')
+                                    ->label('Meta Title'),
+                                TextInput::make('meta_description')
+                                    ->label('Meta Description'),
+                                TextInput::make('meta_keywords')
+                                    ->label('Meta Keywords'),
+                            ])
+                            ->columnSpan(5),
                     ]),
 
             ]);

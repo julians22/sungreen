@@ -21,6 +21,9 @@ class Product extends Model implements HasMedia
                             'additional_info', 
                             'category_id',
                             'sort',
+                            'meta_title',
+                            'meta_description',
+                            'meta_keywords',
                         ];
 
     protected $casts = [

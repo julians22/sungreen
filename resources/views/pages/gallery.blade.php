@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section ('meta_title', $seo['meta_title'])
+@section ('meta_description', $seo['meta_description'])
+@section ('meta_keywords', $seo['meta_keywords'])
+
+
 @section('content')
 
 <section class="mt-18 md:mt-20">
