@@ -113,4 +113,20 @@
         @apply inline-block py-4 px-6 text-lg bg-in-secondary border border-primary text-white rounded-full transition hover:bg-white hover:text-primary duration-500;
     }
 
+ .grecaptcha-badge {
+  width: 70px !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  left: 0px !important;
+  right: auto !important;
+}
+
+.grecaptcha-badge:hover {
+  width: 256px !important;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
 }

@@ -130,6 +130,16 @@
 
 
     <footer class="flex flex-col items-center bg-dark px-2 md:px-0 py-8">
+    <div x-data="{hovered: false}" class="fixed bottom-4 right-7 md:right-8 z-30">
+        <a href="https://wa.me/6285776582728" @mouseover="hovered = true" @mouseleave="hovered = false"">
+        <img class="w-12 h-12 md:w-14 md:h-14 drop-shadow-xl hover:scale-110 transition-transform" 
+             src="{{asset ('img/icons/whatsapp.png')}}" 
+             alt="whatsapp-image">
+      </a>
+      <div x-cloak :class="hovered === true ? 'right-20 opacity-100 visible' : 'right-16 opacity-0 invisible'" class="transition-all duration-300 ease-in-out absolute hidden top-1/2 -translate-y-1/2 bg-white shadow-xl rounded-full w-max px-4 py-2 sm:block">
+            <p class="text-sm">Need help? <span class="font-bold text-primary">+62 577-658-2728</span></p>
+        </div>
+        </div>     
         <img src="{{ asset('img/logo-white.png') }}" alt="Logo" class="mb-4 max-w-[200px] md:max-w-full md:h-18">
         <p class="text-white text-sm md:text-left text-center">&copy; {{ date('Y') }} Sungreen. All Rights Reserved. Design by designcub3.com</p>
     </footer>
