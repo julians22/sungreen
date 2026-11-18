@@ -17,4 +17,4 @@ deployment:
     - /bin/rm -rf $DEPLOYPATH/.npmrc
     - /bin/rm -rf $DEPLOYPATH/boost.json
     - /bin/rm -rf $DEPLOYPATH/README.md
-    - /bin/cd $DEPLOYPATH
+    - /bin/cp -rf $DEPLOYPATH/public $PUBLICPATH/public
