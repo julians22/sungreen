@@ -22,6 +22,5 @@ deployment:
     - /bin/cp -rf $DEPLOYPATH/public/sitemap.xml $PUBLICPATH/sitemap.xml
     - /bin/cp -rf $DEPLOYPATH/public/img $PUBLICPATH/img
     - /bin/cp -rf $DEPLOYPATH/public/fonts $PUBLICPATH/fonts
-    - /bin/cp -rf $DEPLOYPATH/public/vendor $PUBLICPATH/vendor
     - /bin/cp -rf $DEPLOYPATH/public/favicon.ico $PUBLICPATH/favicon.ico
     - /bin/cp -rf $DEPLOYPATH/public/robots.txt $PUBLICPATH/robots.txt
