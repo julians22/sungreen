@@ -24,3 +24,5 @@ deployment:
     - /bin/cp -rf $DEPLOYPATH/public/fonts $PUBLICPATH/fonts
     - /bin/cp -rf $DEPLOYPATH/public/favicon.ico $PUBLICPATH/favicon.ico
     - /bin/cp -rf $DEPLOYPATH/public/robots.txt $PUBLICPATH/robots.txt
+    - /bin/cp -rf $DEPLOYPATH/public/llms-full.txt $PUBLICPATH/llms-full.txt
+    - /bin/cp -rf $DEPLOYPATH/public/llms.txt $PUBLICPATH/llms.txt
