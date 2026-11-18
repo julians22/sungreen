@@ -1,0 +1,21 @@
+# Sungreen Indonesia (sungreen.id)
+
+> Penyedia perlengkapan dan material greenhouse serta sarana pertanian modern di Indonesia, meliputi plastik UV, profil galvanis, spring clip, soft pot, dan tray semai.
+
+Sungreen berfokus pada penyediaan komponen konstruksi greenhouse dan kebutuhan budidaya tanaman untuk skala hobi maupun agribisnis komersial.
+
+## Profil & Informasi Utama
+
+- [Beranda Sungreen](https://sungreen.id/): Halaman utama yang menampilkan gambaran umum produk dan solusi perlengkapan greenhouse dari Sungreen.
+- [Tentang Kami](https://sungreen.id/tentang-kami): Profil perusahaan, visi misi, dan latar belakang Sungreen dalam mendukung sektor pertanian modern.
+- [Galeri Proyek & Produk](https://sungreen.id/galeri): Dokumentasi visual aplikasi produk, instalasi greenhouse, dan penggunaan perlengkapan budidaya.
+- [Hubungi Kami](https://sungreen.id/hubungi-kami): Informasi kontak, alamat, dan saluran pemesanan atau konsultasi produk.
+
+## Katalog Produk
+
+- [Semua Produk](https://sungreen.id/produk): Indeks lengkap seluruh kategori produk perlengkapan greenhouse dan pertanian yang tersedia.
+- [UV Greenhouse Plastic](https://sungreen.id/produk/uv-greenhouse-plastic): Plastik penutup atap dan dinding greenhouse dengan perlindungan sinar ultraviolet (UV) untuk mengatur intensitas cahaya dan suhu tanaman.
+- [Galvanized Profile](https://sungreen.id/produk/galvanized-profile): Profil kanal baja berlapis galvanis anti-karat sebagai rangka dan dudukan pengunci plastik greenhouse.
+- [Spring Clip](https://sungreen.id/produk/spring-clip): Kawat pegas (zig-zag wire) pengunci plastik UV pada profil galvanis agar terpasang kencang dan tahan angin.
+- [Soft Pot](https://sungreen.id/produk/soft-pot): Wadah tanam fleksibel untuk pembibitan maupun budidaya tanaman hortikultura.
+- [Plastic Tray](https://sungreen.id/produk/plastic-tray): Tray semai plastik (seedling tray) berlubang untuk efisiensi proses penyemaian benih.
